@@ -1,0 +1,4241 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass elsarticle
+\begin_preamble
+% specify here the journal
+\journal{Annals of Nuclear Energy}
+
+% use this if you need line numbers
+%\usepackage{lineno}
+\usepackage{amsopn}
+\DeclareMathOperator{\erf}{erf}
+
+
+
+
+%\usepackage{babel}
+\usepackage{gensymb}
+
+
+\usepackage[T1]{fontenc}   
+\usepackage{bigfoot}% to allow verbatim in footnote
+\usepackage[numbered,framed]{matlab-prettifier}
+\numberwithin{equation}{subsection}
+\usepackage{geometry}
+
+%\usepackage{babel}
+
+
+
+
+\usepackage{babel}
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
+\end_preamble
+\use_default_options true
+\begin_modules
+figs-within-sections
+tabs-within-sections
+eqs-within-sections
+graphicboxes
+fix-cm
+fixltx2e
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding T1
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 2
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frontmatter}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Qual
+\end_layout
+
+\begin_layout Author
+D.
+ W.
+ Gould
+\end_layout
+
+\begin_layout Abstract
+This sucks
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Keywords
+Decay Heat 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ Grad Student Torture Methods 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ PWR 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ Fuel Pin
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frontmatter}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+settowidth{
+\backslash
+nomlabelwidth}{$R_{Co}$}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "none"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Rf"
+symbol "$R_{F}$"
+description "Fuel Outer Radius"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Rc"
+symbol "$R_{C}$"
+description "Cladding outer radius"
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Rg"
+symbol "$R_{G}$"
+description "Gap Outer Radius"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Section
+Analytical Derivation
+\end_layout
+
+\begin_layout Subsection
+Assumptions
+\end_layout
+
+\begin_layout Standard
+1-D, ect,Helium as unmoving gas
+\end_layout
+
+\begin_layout Subsection
+Energy Balance
+\end_layout
+
+\begin_layout Standard
+A shell energy balance for an arbitrarily small volume element 
+\begin_inset Formula $V$
+\end_inset
+
+ is given in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ShellBalances"
+
+\end_inset
+
+.
+ The first and second term on the LHS of Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ShellBalances"
+
+\end_inset
+
+ respectively represent the total energy entering into the volume element
+ and the total amount of energy being generated within said volume element.
+ By assuming this arbitrarily small volume element to be sufficiently small,
+ the integral over the volume element may be removed.
+ For a stationary, homogeneous, isotropic medium with constant thermal conductiv
+ity and heat capacity, this energy balance then results in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DiffHeatEq"
+
+\end_inset
+
+.
+ Finally, the mathematical formulation of the current, axi-symmetric and
+ axially uniform problem can be expressed in cylindrical coordinates as
+ Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CylinderDiffHeatEq"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{subequations}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "eq:ShellBalances"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\dot{E}_{in}-\dot{E}_{out}=\dot{E}_{stored}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "rho"
+symbol "$\\rho$"
+description "Density $\\nicefrac{kg}{m^3}$"
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+-\int_{V}\nabla\cdot\mathbf{q}dV+\int_{V}g(r,t)dV=\int_{V}\rho C_{p}\frac{\partial T(r,t)}{\partial t}dV\label{eq:Shell_Balance}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Cp"
+symbol "$C_p$"
+description "Heat Capacity $\\left[\\nicefrac{J}{kgK}\\right]$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\int_{V}\left[-\nabla\cdot\mathbf{q}(r,t)+g(r,t)-\rho C_{p}\frac{\partial T(r,t)}{\partial t}\right]dV=0
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "k"
+symbol "$\\alpha$"
+description "Thermal Diffusivity $\\nicefrac{m^2}{s}$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{subequations}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\nabla^{2}T(r,t)+\frac{1}{k}g(r,t)+=\frac{1}{\alpha}\frac{\partial T(r,t)}{\partial t}\label{eq:DiffHeatEq}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "k"
+symbol "k"
+description "Thermal Conductivity $\\nicefrac{W}{mK}$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial^{2}T(r,t)}{\partial r^{2}}+\frac{1}{r}\frac{\partial T(r,t)}{\partial r}+\frac{1}{k}g(t)=\frac{1}{\alpha}\frac{\partial T\left(r,t\right)}{\partial t}\label{eq:CylinderDiffHeatEq}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+1-D Steady State
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:1-D-Steady-State"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The temperature profile across each region of the fuel pin was first calculated
+ for the steady state conditions observed before the sudden transient.
+ Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CylinderDiffHeatEq"
+
+\end_inset
+
+ is applied to each of the three regions of the fuel pin and further simplified
+ with the new, steady state assumption.
+ To accommodate for the differing material properties of each region, the
+ profile across the fuel pin is solved in a piecewise manner.
+ For simplicity, the thermal resistance method was used to find the profiles
+ of the gap and cladding region.
+\end_layout
+
+\begin_layout Subsubsection
+Cladding and Gap Regions
+\end_layout
+
+\begin_layout Standard
+Integrating the heat equation for the cladding domain twice with constant
+ temperature boundary conditions provided the temperature profile of the
+ clad in the form of Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TempClad"
+
+\end_inset
+
+.
+ The thermal resistances of the outer convection and conduction the were
+ then used in conjunction with the given bulk temperature 
+\begin_inset Formula $T_{Coolant}$
+\end_inset
+
+ and linear heat rate 
+\begin_inset Formula $q^{\prime}$
+\end_inset
+
+ to find the unknown surface temperatures 
+\begin_inset Formula $T\left(R_{C}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $T\left(R_{G}\right)$
+\end_inset
+
+.
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Tcoolant"
+symbol "$T_{Coolant}$"
+description "Bulk Coolant Temperature $\\left[K\\right]$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{r}\frac{d}{dr}\left(k_{3}r\frac{dT_{3}}{dr}\right)=0\;for\;R_{G}<r<R_{C}\label{eq:HeatEqCladSS}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{3}\left(r\right)=\frac{T_{3}\left(R_{G}\right)-T\left(R_{C}\right)}{\ln\left(\nicefrac{R_{G}}{R_{C}}\right)}\ln\left(\frac{r}{R_{C}}\right)+T_{3}\left(R_{C}\right)\label{eq:TempClad}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{3}\left(R_{C}\right)=q^{\prime}\frac{1}{2\pi R_{C}h}+T_{Coolant}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "h"
+symbol "h"
+description "Convection Coefficient $\\nicefrac{W}{m^2K}$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{3}\left(R_{G}\right)=q^{\prime}\left[\frac{1}{2\pi R_{C}h}+\frac{\ln\left(\nicefrac{R_{C}}{R_{G}}\right)}{2\pi k_{3}}\right]+T_{Coolant}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{2}\left(R_{F}\right)=q^{\prime}\left[\frac{1}{2\pi R_{C}h}+\frac{\ln\left(\nicefrac{R_{C}}{R_{G}}\right)}{2\pi k_{3}}+\frac{\ln\left(\nicefrac{R_{G}}{R_{F}}\right)}{2\pi k_{2}}\right]+T_{Coolant}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{2}\left(r\right)=\frac{T_{2}\left(R_{F}\right)-T_{3}\left(R_{G}\right)}{\ln\left(\nicefrac{R_{F}}{R_{G}}\right)}\ln\left(\frac{r}{R_{G}}\right)+T_{3}\left(R_{G}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Fuel Region
+\end_layout
+
+\begin_layout Standard
+In order to find the steady state temperature of the fuel, the heat equation
+ for the fuel region in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HeatEqFueSS"
+
+\end_inset
+
+ is first integrated twice to form Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:IntegratedT1"
+
+\end_inset
+
+.
+ Next, the symmetry and constant temperature boundary conditions given in
+ Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:FuelSymmBoundary"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:FuelTempBoundary"
+
+\end_inset
+
+, respectively, are applied to find the constants 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+, respectively.
+ The temperature profile for the fuel region is solved for in terms of the
+ known quantities.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{subequations}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{r}\frac{d}{dr}\left(r\frac{dT_{1}}{dr}\right)+\frac{q^{\prime\prime\prime}}{k_{1}}=0\;for\;0\leq r\leq R_{F}\label{eq:HeatEqFueSS}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "qppp"
+symbol "$q^{\\prime\\prime\\prime}$"
+description "Volumetric heat generation $\\left[\\nicefrac{W}{m^3}\\right]$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dT}{dr}\Bigg|_{r=0}=0\label{eq:FuelSymmBoundary}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{1}\left(R_{F}\right)=q^{\prime}\left[\frac{1}{2\pi R_{C}h}+\frac{\ln\left(\nicefrac{R_{C}}{R_{G}}\right)}{2\pi k_{3}}+\frac{\ln\left(\nicefrac{R_{G}}{R_{F}}\right)}{2\pi k_{2}}\right]+T_{Coolant}\label{eq:FuelTempBoundary}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{subequations}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+r\frac{dT_{1}}{dr}=-\frac{q^{\prime}}{2k_{1}}r^{2}+C_{1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{1}\left(r\right)=-\frac{q^{\prime}}{4k_{1}}r^{2}+C_{1}\ln\left(r\right)+C_{2}\label{eq:IntegratedT1}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "T"
+symbol "T"
+description "Temperature $K$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{1}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{2}=T_{1}\left(R_{F}\right)+\frac{q^{\prime}}{4k_{1}}R_{F}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{1}\left(r\right)=\frac{q^{\prime}}{4k_{1}}\left(R_{F}^{2}-r^{2}\right)+T_{1}\left(R_{F}\right)
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "qp"
+symbol "$q^{\\prime}$"
+description "Linear Heat Generation Rate $\\nicefrac{W}{m}$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+1-D Transient, No Generation
+\end_layout
+
+\begin_layout Standard
+The homogeneous version of Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CylinderDiffHeatEq"
+
+\end_inset
+
+ next solved.
+ In order to homogenize Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CylinderDiffHeatEq"
+
+\end_inset
+
+, the generation was assumed to be zero.
+ Additionally, a new variable, 
+\begin_inset Formula $\Theta$
+\end_inset
+
+, was defined as per Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ThetaShift"
+
+\end_inset
+
+ to make the convection boundary condition applied to the outer cladding
+ homogeneous as well.
+ The new, homogeneous differintial equation to be solved is shown in Equation
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HeatEquations"
+
+\end_inset
+
+ for each region.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Theta_{i}(r,t)=T_{i}(r,t)\Bigg|_{g^{\prime}=0}-T_{Coolant}\label{eq:ThetaShift}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial^{2}\Theta(r,t)}{\partial r^{2}}+\frac{1}{r}\frac{\partial\Theta(r,t)}{\partial r}=\frac{1}{\alpha}\frac{\partial\Theta\left(r,t\right)}{\partial t}\label{eq:HomoHeatEq}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HeatEquations"
+
+\end_inset
+
+ and Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HeatEqFuel"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{subequations}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "eq:HeatEquations"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\alpha_{1}}{r}\frac{\partial}{\partial r}\left(r\frac{\partial\Theta_{1}}{\partial r}\right)=\frac{\partial\Theta_{1}\left(r,t\right)}{\partial t}\;for\;0\leq r\leq R_{F},\:t>0\label{eq:HeatEqFuel}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\alpha_{2}}{r}\frac{\partial}{\partial r}\left(r\frac{\partial\Theta_{2}}{\partial r}\right)=\frac{\partial\Theta_{2}\left(r,t\right)}{\partial t}\;for\;R_{F}<r<R_{G},\:t>0\label{eq:HeatEqGap}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\alpha_{3}}{r}\frac{\partial}{\partial r}\left(r\frac{\partial\Theta_{3}}{\partial r}\right)=\frac{\partial\Theta_{3}\left(r,t\right)}{\partial t}\;for\;R_{G}<r<R_{C},\:t>0\label{eq:HeatEqClad}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{subequations}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The boundary conditions applied to Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HeatEquations"
+
+\end_inset
+
+ are listed as Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BoundaryConditions"
+
+\end_inset
+
+.
+ In defining the boundary conditions for this problem, the simplifying assumptio
+n of perfect thermal conductivity was made at each interface.
+ It should be noted that while this assumption is likely not to be perfectly
+ valid, it is the only assumption that makes sense for the scope of this
+ work.
+ In actual fuel pins, the interface conductance is known to be a highly
+ complex function of numerous different variables.
+ And given the relatively poor predictive performance of the gap conductivity
+ models available in the literature 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TodreasNuclearSystems"
+
+\end_inset
+
+, any attempt to correct for this assumption is likely to produce only small
+ improvements in accuracy at the cost of large reductions in both the generaliza
+bility of this this analysis and the quality of life of the grad student
+ implementing the models.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{subequations}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "eq:BoundaryConditions"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Temperature is not infinite at center of fuel pin
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Theta_{1}\left(0,t\right)=finite\label{eq:BC1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Perfect thermal contact between the fuel and the gap region
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Theta_{1}\left(R_{F},t\right)=\Theta_{2}\left(R_{F},t\right)\label{eq:BC2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Perfect thermal contact between the gap region and the cladding
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Theta_{2}\left(R_{G},t\right)=\Theta_{3}\left(R_{G},t\right)\label{eq:BC3}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "t"
+symbol "t"
+description "Time $\\left[s\\right]$"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Continuity of heat flux between fuel and gap interface
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+k_{1}\frac{\partial\Theta_{1}}{\partial r}=k_{2}\frac{\partial\Theta_{2}}{\partial r} & at & r=R_{Fuel,}\;t>0\label{eq:BC4}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Continuity of heat flux at the gap and cladding interface.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+k_{2}\frac{\partial\Theta_{2}}{\partial r}=k_{3}\frac{\partial\Theta_{3}}{\partial r} & at & r=R_{Gap,}\;t>0\label{eq:BC5}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Conducted heat flux equals convective heat flux at the cladding surface
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+-k_{3}\frac{\partial\Theta_{3}}{\partial r}=h\Theta_{3} & at & r=R_{Clad,}\;t>0\label{eq:BC6}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{subequations}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The initial conditions used are given by the steady state temperature profile
+ calculated in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:1-D-Steady-State"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{subequations}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "eq:InitialConditions"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\Theta_{1}\left(r,t\right)=F_{1}\left(r\right) & for & t=0,\;0<r<R_{F}\label{eq:IC1}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{1}\left(r\right)=\frac{q^{\prime}}{4k_{fuel}}\left(R_{f}^{2}-r^{2}\right)+\Theta_{1}\left(R_{F},0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\Theta_{2}\left(r,t\right)=F_{2}\left(r\right) & for & t=0,\;R_{F}<r<R_{G}\label{eq:IC2}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{2}\left(r\right)=\frac{\Theta_{2}\left(R_{F},0\right)-\Theta_{2}\left(R_{G},0\right)}{\ln\left(\frac{R_{F}}{R_{G}}\right)}\ln\left(\frac{r}{R_{G}}\right)+\Theta_{2}\left(R_{G},0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\Theta_{3}\left(r,t\right)=F_{3}\left(r\right) & for & t=0,\;R_{G}<r<R_{C}\label{eq:IC3}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{3}\left(r\right)=\frac{\Theta_{3}\left(R_{G},0\right)-\Theta_{3}\left(R_{C},0\right)}{\ln\left(\frac{R_{G}}{R_{C}}\right)}\ln\left(\frac{r}{R_{C}}\right)+\Theta_{3}\left(R_{C},0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{subequations}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With the boundary and initial conditions defined, the function 
+\begin_inset Formula $\Theta$
+\end_inset
+
+was separated into the functions 
+\begin_inset Formula $\Psi_{i}\left(r\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\Gamma_{i}\left(t\right)$
+\end_inset
+
+.
+ Substituting these functions back into Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HomoHeatEq"
+
+\end_inset
+
+ results in two, separate, ordinary differential equations separated by
+ a constant.
+ The ordinary differential equation in time, Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TimeDiffQ"
+
+\end_inset
+
+, is known to have the standard, exponential solution shown in Equation
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TimeSolution"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The differential equation in terms of the space-variable function, 
+\begin_inset Formula $\Psi_{i}\left(r\right)$
+\end_inset
+
+, is seen in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PsiEiganvalue"
+
+\end_inset
+
+ to be of the form of an eigenvalue problem.
+ The boundary conditions for this problem will be the same as those listed
+ for the whole homogeneous problem in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BoundaryConditions"
+
+\end_inset
+
+, but simply in terms of the new function 
+\begin_inset Formula $\Psi$
+\end_inset
+
+.
+ The solution of an eigenvalue problem such as this will take the form of
+ an infinite summation of elementary solutions.
+ Each of these solutions will require specific values for both the eigenvalue,
+ 
+\begin_inset Formula $\beta_{n}$
+\end_inset
+
+, and a constant, here referred to as 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Theta_{i}(r,t)=\Psi_{i}(r)\Gamma(t)\label{eq:PsiGammaSep}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\alpha_{i}}{\Psi_{i}}\left(\frac{d^{2}\Psi_{i}}{dr}+\frac{1}{r}\left(\frac{d\Psi_{i}}{dr}\right)\right)=\frac{1}{\Gamma(t)}\frac{d\Gamma(t)}{dt}=-\beta^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{d\Gamma(t)}{dt}+\beta_{n}^{2}\Gamma(t)=0\label{eq:TimeDiffQ}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Gamma(t)=e^{-\beta_{n}^{2}t}\label{eq:TimeSolution}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{r}\frac{d}{dr}\left(r\frac{d\Psi_{in}}{dr}\right)+\frac{\beta_{n}^{2}}{\alpha_{i}}\Psi_{in}=0\label{eq:PsiEiganvalue}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{cc}
+\Theta_{i}(r,t)=\overset{\infty}{\underset{n=1}{\sum}}C_{n}e^{-\beta_{n}^{2}t}\Psi_{in}(r), & i=1,2,3\end{array}\label{eq:ThetaSumSolution}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to solve for the constants 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+, the initial conditions given in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:InitialConditions"
+
+\end_inset
+
+ are used.
+ At t=0, 
+\begin_inset Formula $\Gamma(t)$
+\end_inset
+
+ will go to unity, resulting in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EigenIC"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F_{i}(r)=\underset{n=1}{\overset{\infty}{\sum}}C_{n}\Psi_{i_{n}}\left(r\right)\label{eq:EigenIC}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Utilizing the orthogonality of the eigenfunctions 
+\begin_inset Formula $\Psi_{in}$
+\end_inset
+
+, both sides of Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:EigenIC"
+
+\end_inset
+
+ are operated on by the operator 
+\begin_inset Formula $\frac{k_{i}}{\alpha_{i}}\int_{r_{i}}^{r_{i}+1}r\Psi_{i_{n}}\left(r\right)dr$
+\end_inset
+
+ and summed over the three regions.
+\end_layout
+
+\begin_layout Standard
+This process results in an equation that can be solved for the coefficients
+ 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+, given here as Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CnNn"
+
+\end_inset
+
+.
+ The newly defined constant 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+ can then be substituted back into Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ThetaSumSolution"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{subequations}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "eq:CnNn"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+C_{n}=\frac{1}{N_{n}}\overset{3}{\underset{i=1}{\sum}}\frac{k_{i}}{\alpha_{i}}\int_{r_{j}}^{r_{j}+1}r\Psi_{in}\left(r\right)F_{i}\left(r\right)dr\label{eq:CnConstant}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{n}=\overset{3}{\underset{j=1}{\sum}}\frac{k_{j}}{\alpha_{j}}\int_{r_{j}}^{r_{j}+1}r\Psi_{jn}^{2}\left(r\right)dr
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{subequations}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As previously mentioned, for each elementary solution the value of both
+ the constant, 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+, and the specific eigenvalue, 
+\begin_inset Formula $\beta_{n}$
+\end_inset
+
+, in needed.
+ Previously, the initial condition of the function were used to find an
+ equation for the series of constants known as 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+.
+ Next, the boundary conditions of the differential equation are used to
+ calculate the eigenvalues 
+\begin_inset Formula $\beta_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In cylindrical coordinates, the general solution Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PsiEiganvalue"
+
+\end_inset
+
+ is known to be of the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Psi_{in}\left(r\right)=A_{in}J_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{i}}}r\right)+B_{in}Y_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{i}}}r\right)\label{eq:Eigenfunction}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Initially, therefore, there are 6 coefficients that must be found.
+ In order to find the coefficients 
+\begin_inset Formula $A_{in}$
+\end_inset
+
+ and 
+\begin_inset Formula $B_{in}$
+\end_inset
+
+, the boundary conditions listed in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BoundaryConditions"
+
+\end_inset
+
+ are applied.
+\end_layout
+
+\begin_layout Standard
+First, due to the problem being homogeneous, there will be one arbitrary
+ coefficient that can be set to unity with no loss in generality.
+ 
+\begin_inset Formula $A_{1n}$
+\end_inset
+
+ was thus chosen as the arbitrary constant and set equal to 1.
+ Second, from Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BC1"
+
+\end_inset
+
+, the solution cannot be infinite at r = 0.
+ As 
+\begin_inset Formula $Y_{0}$
+\end_inset
+
+
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\begin_inset Formula $-\infty$
+\end_inset
+
+ as r 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ 0, the coefficient 
+\begin_inset Formula $B_{1n}$
+\end_inset
+
+ was required to be zero.
+ Applying these conditions to Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Eigenfunction"
+
+\end_inset
+
+ results in the general solutions of the three regions being
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{subequations}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "eq:GenSolEqs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Psi_{1n}(r)=J_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{1}}}r\right)\label{eq:GenSol1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Psi_{2n}(r)=A_{2n}J_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{2}}}r\right)+B_{2n}Y_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{2}}}r\right)\label{eq:GenSol2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Psi_{3n}(r)=A_{3n}J_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{3}}}r\right)+B_{3n}Y_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{3}}}r\right)\label{eq:GenSol3}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{subequations}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The remaining four coefficients and the eigenvalue 
+\begin_inset Formula $\beta_{n}$
+\end_inset
+
+were found by solving the system of equations given by the other boundary
+ conditions.
+ This system of equations is written in matrix form in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:FullEqMat"
+
+\end_inset
+
+.
+ From these five equations, the first four equations were selected and used
+ to solve for the coefficients 
+\begin_inset Formula $A_{2n}$
+\end_inset
+
+, 
+\begin_inset Formula $B_{2n}$
+\end_inset
+
+,
+\begin_inset Formula $A_{3n}$
+\end_inset
+
+, and 
+\begin_inset Formula $B_{3n}$
+\end_inset
+
+ in terms of the eigenvalue 
+\begin_inset Formula $\beta_{n}$
+\end_inset
+
+ by solving the system of equations shown in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:SolvedEqMat"
+
+\end_inset
+
+.
+ The resulting closed form solutions for 
+\begin_inset Formula $A_{2n}$
+\end_inset
+
+ and 
+\begin_inset Formula $B_{2n}$
+\end_inset
+
+are given as Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:A2n"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:B2n"
+
+\end_inset
+
+.
+ Due to limitation in both the amount of paper currently located in the
+ state of Kansas and - due to the minuscule nature of his salary - the very
+ small amount of money that this paper's author has with which to buy said
+ paper, the closed form solutions of 
+\begin_inset Formula $A_{3n}$
+\end_inset
+
+ and 
+\begin_inset Formula $B_{3n}$
+\end_inset
+
+ are not listed here.
+ However, the Matlab code with which they were generated is provided in
+ Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Matlab-Code"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{changemargin}{-4cm}{-1cm}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Formula 
+\begin{equation}
+\begin{gathered}\smash{\left[\begin{array}{ccccc}
+J_{0}\left(\frac{\beta_{n}}{\alpha_{1}^{.5}}R_{F}\right) & -J_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right) & -Y_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right) & 0 & 0\\
+\frac{\alpha_{2}^{.5}}{\alpha_{1}^{.5}}\frac{k_{1}}{k_{2}}J_{1}\left(\frac{\beta_{n}}{\alpha_{1}^{.5}}R_{F}\right) & -J_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right) & -Y_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right) & 0 & 0\\
+0 & J_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{G}\right) & Y_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{G}\right) & -J_{0}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{G}\right) & -Y_{0}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{G}\right)\\
+0 & \frac{\alpha_{3}^{.5}}{\alpha_{2}^{.5}}\frac{k2}{k3}J_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{G}\right) & \frac{\alpha_{3}^{.5}}{\alpha_{2}^{.5}}\frac{k_{2}}{k_{3}}Y_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{G}\right) & -J_{1}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{G}\right) & -Y_{1}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{G}\right)\\
+0 & 0 & 0 & J_{1}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{C}\right)-\frac{hJ_{0}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{C}\right)}{\alpha_{3}^{-.5}\beta_{n}k_{3}} & Y_{1}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{C}\right)-\frac{hY_{0}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{C}\right)}{\alpha_{3}^{-.5}\beta_{n}k_{3}}
+\end{array}\right]}\\
+\vphantom{\left[\begin{array}{c}
+1\\
+A_{2n}\\
+B_{2n}\\
+A_{3n}\\
+B_{3n}
+\end{array}\right]=\left[\begin{array}{c}
+0\\
+0\\
+0\\
+0\\
+0
+\end{array}\right]}\\
+\times\left[\begin{array}{c}
+1\\
+A_{2n}\\
+B_{2n}\\
+A_{3n}\\
+B_{3n}
+\end{array}\right]=\left[\begin{array}{c}
+0\\
+0\\
+0\\
+0\\
+0
+\end{array}\right]
+\end{gathered}
+\label{eq:FullEqMat}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "J0"
+symbol "$J_0$"
+description "Bessel function of the first kind"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left[\begin{array}{cccc}
+-J_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{2}}}R_{F}\right) & -Y_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{2}}}R_{F}\right) & 0 & 0\\
+-J_{1}\left(\frac{\beta_{n}}{\sqrt{\alpha_{2}}}R_{F}\right) & -Y_{1}\left(\frac{\beta_{n}}{\sqrt{\alpha_{2}}}R_{F}\right) & 0 & 0\\
+J_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{2}}}R_{G}\right) & Y_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{2}}}R_{G}\right) & -J_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{3}}}R_{G}\right) & -Y_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{3}}}R_{G}\right)\\
+\frac{\sqrt{\alpha_{3}}}{\sqrt{\alpha_{2}}}\frac{k_{2}}{k_{3}}J_{1}\left(\frac{\beta_{n}}{\sqrt{\alpha_{2}}}R_{G}\right) & \frac{\sqrt{\alpha_{3}}}{\sqrt{\alpha_{2}}}\frac{k_{2}}{k_{3}}Y_{1}\left(\frac{\beta_{n}}{\sqrt{\alpha_{2}}}R_{G}\right) & -J_{1}\left(\frac{\beta_{n}}{\sqrt{\alpha_{3}}}R_{G}\right) & -Y_{1}\left(\frac{\beta_{n}}{\sqrt{\alpha_{3}}}R_{G}\right)
+\end{array}\right]\left[\begin{array}{c}
+A_{2n}\\
+B_{2n}\\
+A_{3n}\\
+B_{3n}
+\end{array}\right]=\left[\begin{array}{c}
+-J_{0}\left(\frac{\beta_{n}}{\sqrt{\alpha_{1}}}R_{F}\right)\\
+-\frac{\sqrt{\alpha_{2}}}{\sqrt{\alpha_{1}}}\frac{k_{1}}{k_{2}}J_{1}\left(\frac{\beta_{n}}{\sqrt{\alpha_{1}}}R_{F}\right)\\
+0\\
+0
+\end{array}\right]\label{eq:SolvedEqMat}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{2n}=\frac{\alpha_{1}^{.5}k_{2}J_{0}\left(\frac{\beta_{n}}{\alpha_{1}^{.5}}R_{F}\right)Y_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right)-\alpha_{2}^{.5}k_{1}J_{1}\left(\frac{\beta_{n}}{\alpha_{1}^{.5}}R_{F}\right)Y_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right)}{\alpha_{1}^{.5}k_{2}\left(J_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right)Y_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right)-J_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right)Y_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right)\right)}\label{eq:A2n}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Y0"
+symbol "$Y_0$"
+description "Bessel function of the second kind"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+B_{2n}=\frac{-\alpha_{1}^{.5}k_{2}J_{0}\left(\frac{\beta_{n}}{\alpha_{1}^{.5}}R_{F}\right)J_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right)-\alpha_{2}^{.5}k_{1}J_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right)J_{1}\left(\frac{\beta_{n}}{\alpha_{1}^{.5}}R_{F}\right)}{\alpha_{1}^{.5}k_{2}\left(J_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right)Y_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right)-J_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right)Y_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right)\right)}\label{eq:B2n}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\det\left(\left[\begin{array}{ccccc}
+J_{0}\left(\frac{\beta_{n}}{\alpha_{1}^{.5}}R_{F}\right) & -J_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right) & -Y_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right) & 0 & 0\\
+\frac{\alpha_{2}^{.5}}{\alpha_{1}^{.5}}\frac{K_{1}}{K_{2}}J_{1}\left(\frac{\beta_{n}}{\alpha_{1}^{.5}}R_{F}\right) & -J_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right) & -Y_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{F}\right) & 0 & 0\\
+0 & J_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{G}\right) & Y_{0}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{G}\right) & -J_{0}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{G}\right) & -Y_{0}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{G}\right)\\
+0 & \frac{\alpha_{3}^{.5}}{\alpha_{2}^{.5}}\frac{k_{2}}{k_{3}}J_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{G}\right) & \frac{\alpha_{3}^{.5}}{\alpha_{2}^{.5}}\frac{k_{2}}{k_{3}}Y_{1}\left(\frac{\beta_{n}}{\alpha_{2}^{.5}}R_{G}\right) & -J_{1}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{G}\right) & -Y_{1}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{G}\right)\\
+0 & 0 & 0 & J_{1}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{C}\right)-\frac{hJ_{0}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{C}\right)}{\alpha_{3}^{-.5}\beta_{n}k_{3}} & Y_{1}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{C}\right)-\frac{hY_{0}\left(\frac{\beta_{n}}{\alpha_{3}^{.5}}R_{C}\right)}{\alpha_{3}^{-.5}\beta_{n}k_{3}}
+\end{array}\right]\right)=0\label{eq:Det}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{changemargin}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next, the eigenvalues 
+\begin_inset Formula $\beta_{n}$
+\end_inset
+
+ were determined by the requirement that the solution to the system of equations
+ given in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:FullEqMat"
+
+\end_inset
+
+ not be trivial.
+ This requirement is fulfilled by setting the determinant of the coefficient
+ matrix in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:FullEqMat"
+
+\end_inset
+
+ equal to zero, as shown in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Det"
+
+\end_inset
+
+ .Setting the determinate of this matrix equal to zero results in a transcendenta
+l equation for the determination of the eigenvalues 
+\begin_inset Formula $\beta_{n}$
+\end_inset
+
+ - for which there is no closed form solution 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ozisik_Conduction"
+
+\end_inset
+
+.
+ Therefore, Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Det"
+
+\end_inset
+
+ was solved numerically within Matlab.
+ The Matlab function written to solve for the eigenvalues is provided in
+ Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Trancendal-Root-Finder"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+With the calculation of the coefficients and eigenvalues, the solution to
+ the homogeneous, 1-D, transient temperature distribution is complete.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Theta_{i}=\overset{3}{\underset{j=1}{\sum}}\left[\overset{\infty}{\underset{n=1}{\sum}}\frac{1}{N_{n}}e^{-\beta_{n}^{2}t}\Psi_{ijn}(r)\left[\frac{k_{1}}{\alpha_{1}}\int_{0}^{R_{F}}r^{\prime}\Psi_{ijn}\left(r^{\prime}\right)F_{j}\left(r^{\prime}\right)dr^{\prime}\right]\right]\label{eq:TempHomoSum}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "n"
+symbol "n"
+description "Eigenvalue summation index number"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline}
+T_{i}\left(r,t\right)=\Theta_{i}+T_{Coolant}=\left[\overset{\infty}{\underset{n=1}{\sum}}\frac{1}{N_{n}}e^{-\beta_{n}^{2}t}\Psi_{in}(r)\left[\frac{k_{1}}{\alpha_{1}}\int_{0}^{R_{F}}r^{\prime}\Psi_{1n}\left(r^{\prime}\right)F_{1}\left(r^{\prime}\right)dr^{\prime}+\right.\right.\\
+\left.\left.\frac{k_{2}}{\alpha_{2}}\int_{R_{F}}^{R_{G}}r^{\prime}\Psi_{2n}\left(r^{\prime}\right)F_{2}\left(r^{\prime}\right)dr^{\prime}+\frac{k_{3}}{\alpha_{3}}\int_{R_{G}}^{R_{Cladl}}r^{\prime}\Psi_{3n}\left(r^{\prime}\right)F_{3}\left(r^{\prime}\right)dr^{\prime}\right]\right]+T_{Coolant}\label{eq:TempHomo}
+\end{multline}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+1-D Transient, With Generation
+\end_layout
+
+\begin_layout Standard
+Including the effect of heat generation required solving Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CylinderDiffHeatEq"
+
+\end_inset
+
+ for each region, rather than the homogeneous versions listed as Equations
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HeatEqFuel"
+
+\end_inset
+
+ through 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HeatEqClad"
+
+\end_inset
+
+.
+ The boundary conditions and initial conditions, however, remain the same
+ as those listed in Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BC1"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:IC3"
+
+\end_inset
+
+.
+ In order to include generation in the analytic solution, the solution to
+ Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CylinderDiffHeatEq"
+
+\end_inset
+
+ was first found in terms of Green's function.
+ This is shown in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ThetaGreensFunGen"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation*}  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frac{
+\backslash
+partial^{2}T(r,t)}{
+\backslash
+partial r^{2}}+
+\backslash
+frac{1}{r}
+\backslash
+frac{
+\backslash
+partial T(r,t)}{
+\backslash
+partial r}+
+\backslash
+frac{1}{k}g(t)=
+\backslash
+frac{1}{
+\backslash
+alpha}
+\backslash
+frac{
+\backslash
+partial T
+\backslash
+left(r,t
+\backslash
+right)}{
+\backslash
+partial t}
+\backslash
+label{eq:CylinderDiffHeatEq-1} 
+\backslash
+tag{
+\backslash
+ref{eq:CylinderDiffHeatEq}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation*}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial^{2}T(r,t)}{\partial r^{2}}+\frac{1}{r}\frac{\partial T(r,t)}{\partial r}+\frac{1}{k}g(t)=\frac{1}{\alpha}\frac{\partial T\left(r,t\right)}{\partial t}\label{eq:CylinderDiffHeatEq-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial^{2}\theta_{i}(r,t)}{\partial r^{2}}+\frac{1}{r}\frac{\partial\theta_{i}(r,t)}{\partial r}+\frac{1}{k_{i}}g(t)=\frac{1}{\alpha_{i}}\frac{\partial\theta_{i}\left(r,t\right)}{\partial t}\label{eq:CylinderDiffHeatEqGen}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+\theta_{i}\left(r,t\right)=\overset{3}{\underset{j=1}{\sum}}\left[\int_{r^{\prime}=r_{j}}^{r^{\prime}=r_{j+1}}r^{\prime}G_{ij}\left(r,t\left|r^{\prime},\tau\right.\right)\left|_{\tau=0}\right.F_{j}\left(r^{\prime}\right)dr^{\prime}\right]\\
+\hphantom{+\int_{r^{\prime}=r_{j}}^{r^{\prime}=r_{j+1}}}+\frac{\alpha_{i}}{k_{i}}\int_{\tau=0}^{\tau=t}\left[\overset{3}{\underset{j=1}{\sum}}\left[\int_{r^{\prime}=r_{j}}^{r^{\prime}=r_{j+1}}r^{\prime}G_{ij}\left(r,t\left|r^{\prime},\tau\right.\right)g_{j}\left(r^{\prime},\tau\right)dr^{\prime}\right]\right]d\tau
+\end{array}\label{eq:ThetaGreensFunGen}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "rp"
+symbol "$r^{\\prime}$"
+description "Never have been able to figure that out"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\theta_{i}\left(r,t\right)\Bigg|_{g(r,t)=0} & =\Theta_{i}= & \overset{3}{\underset{j=1}{\sum}}\int_{r^{\prime}=r_{j}}^{r^{\prime}=r_{j+1}}r^{\prime}G_{ij}\left(r,t\left|r^{\prime},\tau\right.\right)\left|_{\tau=0}\right.F_{j}\left(r^{\prime}\right)dr^{\prime}\label{eq:ThetaGreenTau0}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{ij}\left(r,t\left|r^{\prime},\tau\right.\right)\left|_{\tau=0}\right.=\overset{\infty}{\underset{n=1}{\sum}}\frac{k_{j}}{\alpha_{j}}\frac{1}{N_{n}}e^{-\beta_{n}^{2}\tau}\Psi_{in}(r)\Psi_{jn}(r^{\prime})\label{eq:GreenTau0}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "i"
+symbol "i"
+description "Region index number "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G_{ij}\left(r,t\left|r^{\prime},\tau\right.\right)=\overset{\infty}{\underset{n=1}{\sum}}\frac{k_{j}}{\alpha_{j}}\frac{1}{N_{n}}e^{-\beta_{n}^{2}\left(t-\tau\right)}\Psi_{in}(r)\Psi_{jn}(r^{\prime})\label{eq:GreensTau}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next, this solution is simplified for the homogeneous case in which 
+\begin_inset Formula $g=0$
+\end_inset
+
+.
+ This is shown in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ThetaGreensFunGen"
+
+\end_inset
+
+.
+ By comparing Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ThetaGreenTau0"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:TempHomoSum"
+
+\end_inset
+
+, the function 
+\begin_inset Formula $G_{ij}\left(r,t\left|r^{\prime},\tau\right.\right)\left|_{\tau=0}\right.$
+\end_inset
+
+can be determined.
+ Then, by substituting the term
+\begin_inset Formula $\left(t-\tau\right)$
+\end_inset
+
+ for the 
+\begin_inset Formula $\tau$
+\end_inset
+
+ in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:GreenTau0"
+
+\end_inset
+
+, 
+\begin_inset Formula $G_{ij}\left(r,t\left|r^{\prime},\tau\right.\right)$
+\end_inset
+
+ can be obtained, giving the full solution for the nonhomogenous problem.
+ Finally, converting back from 
+\begin_inset Formula $\theta$
+\end_inset
+
+ to 
+\begin_inset Formula $T$
+\end_inset
+
+ and removing the portions of the summation relating any generation in the
+ gap or cladding results in the final equation for the temperature profile
+ across the fuel pin.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{changemargin}{-2.4cm}{-1cm}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+\theta_{i}\left(r,t\right)=\overset{3}{\underset{j=1}{\sum}}\left[\int_{r^{\prime}=r_{j}}^{r^{\prime}=r_{j+1}}r^{\prime}\left[\overset{\infty}{\underset{n=1}{\sum}}\frac{k_{j}}{\alpha_{j}}\frac{1}{N_{n}}e^{-\beta_{n}^{2}\tau}\Psi_{in}(r)\Psi_{jn}(r^{\prime})\right]F_{j}\left(r^{\prime}\right)dr^{\prime}\right]\\
+\hphantom{+\int_{r^{\prime}=r_{j}}^{r^{\prime}=r_{j+1}}}+\frac{\alpha_{i}}{k_{i}}\int_{\tau=0}^{\tau=t}\left[\overset{3}{\underset{j=1}{\sum}}\left[\int_{r^{\prime}=r_{j}}^{r^{\prime}=r_{j+1}}r^{\prime}\left[\overset{\infty}{\underset{n=1}{\sum}}\frac{k_{j}}{\alpha_{j}}\frac{1}{N_{n}}e^{-\beta_{n}^{2}\left(t-\tau\right)}\Psi_{in}(r)\Psi_{jn}(r^{\prime})\right]g_{j}\left(r^{\prime},\tau\right)dr^{\prime}\right]\right]d\tau
+\end{array}\label{eq:ThetaGreensFunGen-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+T_{i}\left(r,t\right)=\overset{3}{\underset{j=1}{\sum}}\left[\int_{r^{\prime}=r_{j}}^{r^{\prime}=r_{j+1}}r^{\prime}\left[\overset{\infty}{\underset{n=1}{\sum}}\frac{k_{j}}{\alpha_{j}}\frac{1}{N_{n}}e^{-\beta_{n}^{2}\tau}\Psi_{in}(r)\Psi_{jn}(r^{\prime})\right]F_{j}\left(r^{\prime}\right)dr^{\prime}\right]\\
+\hphantom{+\int_{r^{\prime}=r_{j}}^{r^{\prime}=r_{j+1}}}+\frac{\alpha_{i}}{k_{i}}\int_{\tau=0}^{\tau=t}\left[\int_{r^{\prime}=0}^{r^{\prime}=R_{F}}r^{\prime}\left[\overset{\infty}{\underset{n=1}{\sum}}\frac{k_{j}}{\alpha_{j}}\frac{1}{N_{n}}e^{-\beta_{n}^{2}\left(t-\tau\right)}\Psi_{in}(r)\Psi_{1n}(r^{\prime})\right]g_{1}\left(r^{\prime},\tau\right)dr^{\prime}\right]d\tau+T_{Coolant}
+\end{array}\label{eq:FinalTemp}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{changemargin}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "j"
+symbol "j"
+description "Region index number "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+FDE
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+numberwithin{equation}{section}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+iven a smooth function 
+\begin_inset Formula $f$
+\end_inset
+
+, we can always write down a Taylor series; there is no guarantee that the
+ series converges its Taylor series (around 
+\begin_inset Formula $0$
+\end_inset
+
+) is 
+\begin_inset Formula 
+\begin{equation}
+\sum_{n=0}^{\infty}\frac{f^{(n)}(0)\,x^{n}}{n!}
+\end{equation}
+
+\end_inset
+
+A common mistake is to use 
+\begin_inset Formula $f^{(n)}(x)$
+\end_inset
+
+ instead of 
+\begin_inset Formula $f^{(n)}(0)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Given a smooth function its Taylor series expanded around $a$ is 
+\begin_inset Formula 
+\[
+\sum_{n=0}^{\infty}\frac{f^{(n)}(a)\,(x-a)^{n}}{n!}
+\]
+
+\end_inset
+
+The most important example of this sort of Taylor series is 
+\begin_inset Formula 
+\[
+\log x=\sum_{n=1}^{\infty}\frac{(-1)^{n+1}\,(x-1)^{n}}{n}=(x-1)-\frac{(x-1)^{2}}{2}+\frac{(x-1)^{3}}{3}-\frac{(x-1)^{4}}{4}+\cdots
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Modeling of Decay Heat Generation
+\end_layout
+
+\begin_layout Standard
+In this work, heat generation was modeled in two different ways.
+ The first method used was to assume that the heat generated within the
+ fuel after shutdown was a constant 2% of the initial steady state linear
+ generation rate of 
+\begin_inset Formula $\unitfrac[32]{kW}{m}$
+\end_inset
+
+.
+ The second method used was the application time dependent decay heat model
+ from the literature.
+ A survey of relavent literature found several such models.
+ Like almost all other aspects of nuclear engineering, the im
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "49text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename GenerationFunction.png
+	lyxscale 40
+	width 100line%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $g^{\prime}\left(t\right)$
+\end_inset
+
+ from decay heat model 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:GenerationFunc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "49text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename DecayHeatModels.png
+	lyxscale 30
+	width 100line%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Plots of decay heat functions from several models.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lauben2002"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:DecayModelCompare"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison of selected 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Subsection
+Steady State Profile
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "49text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename SteadyStateHalf.png
+	lyxscale 40
+	width 75text%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Steady state temperature profile across fuel pin - current work
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SSprofile"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "49text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename LitSSfuelTemp.png
+	lyxscale 30
+	width 100line%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Steady state temperature profile for similar fuel pin size and power 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PWR_Fuel_Profile"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:LitSSplot"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Steady state temperature profiles across PWR fuel pins 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SSprofiles"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Convergence
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+center
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename EiganValueConvergenceTime1sec.png
+	lyxscale 40
+	width 70text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Convergence of analytical solution 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:EigenvalueConvergence"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Comparison of Methods
+\end_layout
+
+\begin_layout Standard
+Analytical
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "49text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ZeroGenMethodProfileCompare.png
+	lyxscale 40
+	width 80line%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $g^{\prime}=0$
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:NoGenAllMethods"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "49text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ConstantGenAllMethods5sec.png
+	lyxscale 30
+	width 80line%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $g^{\prime}$
+\end_inset
+
+ = 
+\begin_inset Formula $640\unitfrac{W}{m}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ConstantGenAllMethods"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Temperature profiles 5 seconds after shutdown 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:5secMethodsCompare"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+vs
+\end_layout
+
+\begin_layout Standard
+FDE/coms
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "49text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ComsolAnalyticalZeroGen.png
+	lyxscale 40
+	width 80line%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $g^{\prime}=0$
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:AnalyticComsolCompareZero"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "49text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ComsolAnalyticalConstantGen.png
+	lyxscale 40
+	width 80line%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $g^{\prime}$
+\end_inset
+
+ = 
+\begin_inset Formula $640\;\unitfrac{W}{m}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:AnalyticComsolCompareConstant"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Temperature profiles at selected times after shutdown 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:AnalyticComsolCompare"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename AnalyticComsolTimeGenCompare.png
+	lyxscale 30
+	width 60text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Temperature profiles at selected times with 
+\begin_inset Formula $g^{\prime}=g^{\prime}\left(t\right)$
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:AnalyticComsolCompareTimeGen"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Although at first glance it might appear that the author created Figure
+ NUM by simply copying Figure NUM and changing the title, this is not the
+ case - mainly due to the fact that this idea did not occur to the author
+ before he had finished making both figures.
+ Rather, both generation rates happen to produce very similar temperature
+ profiles at this particular time.
+ As Figure NUM shows, this
+\end_layout
+
+\begin_layout Subsection
+Time Dependent Generation
+\end_layout
+
+\begin_layout Standard
+Not unexpectedly, including time dependence in the applied heat generation
+ proved to have large effects on the temperature profiles calculated across
+ the fuel pin.
+ The largest effect of adding in the time dependent generation was the large
+ decrease in the factor of safety observed regarding the melting of the
+ cladding and/or fuel.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:GenMeltCoef"
+
+\end_inset
+
+ shows the the power needed to melt the fuel or cladding relative to the
+ actual power applied in the constant and time dependent generation cases.
+ It was also found that, if the minimum power needed to melt the fuel was
+ applied, the fuel would reach its melting point sooner under the time dependent
+ generation scenario.
+ This can be seen in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MaxTempOverTime"
+
+\end_inset
+
+, where the maximum fuel temperature is plotted as a function of time for
+ the minimum constant and minimum time dependent generation rates.
+ Again, this is not unexpected as the decay heat model used here initially
+ generates heat at approximately 6% of the pre-shutdown power level - in
+ comparison to the 2% of pre-shutdown power applied in the constant generation
+ cases.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename MaxTempOverTimeCompare.png
+	lyxscale 30
+	width 60text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Maximum fuel temperature over time for the minimum generation rates required
+ to melt the fuel.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MaxTempOverTime"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\begin_inset Formula $\mathbf{g^{\prime}=640\unitfrac{W}{m}}$
+\end_inset
+
+
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\begin_inset Formula $\mathbf{g^{\prime}=g^{\prime}(t)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Power to Melt Fuel
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $34.1\times g^{\prime}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $18\times g^{\prime}(t)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Power to Melt Cladding
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $35.35\times g^{\prime}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $18.78\times g^{\prime}(t)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Time Before Fuel Melts
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50.92 s 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+31.3 s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Energy Generated Before Fuel Melts
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.11E6 
+\begin_inset Formula $\unitfrac{J}{m}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.01E5 
+\begin_inset Formula $\unitfrac{J}{m}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Relative generation increase required to melt fuel/cladding 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:GenMeltCoef"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintAll"
+bibfiles "Qual"
+options "bibtotoc,plain"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newgeometry{left=2.5cm,top=2cm,bottom=2cm,right=2.5cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Matlab Algorithms
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Matlab-Code"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Transcendental Root Finder
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Trancendal-Root-Finder"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[   
+\end_layout
+
+\begin_layout Plain Layout
+
+	style      = Matlab-editor,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	basicstyle = 
+\backslash
+mlttfamily,	
+\end_layout
+
+\begin_layout Plain Layout
+
+]{SymbolicHomoFunction.m} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Steady State Calculation
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[   
+\end_layout
+
+\begin_layout Plain Layout
+
+	style      = Matlab-editor,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	basicstyle = 
+\backslash
+mlttfamily,	
+\end_layout
+
+\begin_layout Plain Layout
+
+]{SteadyState.m} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Subsection
+Analytical Transient Profile Calculations - With Generation
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[   
+\end_layout
+
+\begin_layout Plain Layout
+
+	style      = Matlab-editor,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	basicstyle = 
+\backslash
+mlttfamily,	
+\end_layout
+
+\begin_layout Plain Layout
+
+]{SymbolicNonHomoTransientGen.m} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Fuel/Clad Melting Power Finder
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[   
+\end_layout
+
+\begin_layout Plain Layout
+
+	style      = Matlab-editor,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	basicstyle = 
+\backslash
+mlttfamily,	
+\end_layout
+
+\begin_layout Plain Layout
+
+]{SymbolicPowerSolverFun.m} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Decay Heat Function
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[   
+\end_layout
+
+\begin_layout Plain Layout
+
+	style      = Matlab-editor,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	basicstyle = 
+\backslash
+mlttfamily,	
+\end_layout
+
+\begin_layout Plain Layout
+
+]{TransientDecayPower.m} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Explicit FDE Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[   
+\end_layout
+
+\begin_layout Plain Layout
+
+	style      = Matlab-editor,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	basicstyle = 
+\backslash
+mlttfamily,	
+\end_layout
+
+\begin_layout Plain Layout
+
+]{QualFDE.m} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Simple Implicit FDE Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[   
+\end_layout
+
+\begin_layout Plain Layout
+
+	style      = Matlab-editor,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	basicstyle = 
+\backslash
+mlttfamily,	
+\end_layout
+
+\begin_layout Plain Layout
+
+]{QualFDEsimpleImplicit.m} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Crank Nicholson FDE Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[   
+\end_layout
+
+\begin_layout Plain Layout
+
+	style      = Matlab-editor,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	basicstyle = 
+\backslash
+mlttfamily,	
+\end_layout
+
+\begin_layout Plain Layout
+
+]{QualFDEimplicitCN.m} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+restoregeometry
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
